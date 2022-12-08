@@ -3,17 +3,11 @@
 
 # In[8]:
 
-
 import geopandas as gpd
 import glob
 
 
-# Notes:
-# - check slashes for paths to folders and data
-# 
-
 # In[9]:
-
 
 DATA_DIR = '.\Data\\reprojected'  # data folder containing REPROJECTED shape files
 inter_folder = '.\Data\intersected' # path to folder you want intersected files to go to
@@ -23,7 +17,6 @@ print(files)
 
 
 # In[10]:
-
 
 shp_files_proj = []
 names = []
@@ -36,11 +29,8 @@ for shp in files:
         shp_files_proj.append(file)
         names.append(shp)
 
-
-# Use cell below to check that path to intersection folder looks right
-
+        
 # In[11]:
-
 
 for shp in names:
     print(shp)
@@ -49,7 +39,6 @@ for shp in names:
 
 
 # In[12]:
-
 
 def intersection(boundary, shps):
     """
@@ -70,13 +59,12 @@ def intersection(boundary, shps):
 
 # In[13]:
 
-
 intersected_shps = intersection(boundary, shp_files_proj)
 
 
 # In[14]:
 
-
 for shp in intersected_shps: 
     shp.plot()
 
+    
