@@ -3,20 +3,12 @@
 
 # In[1]:
 
-
 import pandas as pd
 import geopandas as gpd
 import glob
 
 
-# Notes:
-# - Again, check slashes for paths to folders
-# - saves merged file as "Def_Mis_merged.shp" to the merged folder
-#     - not automated, since only one merged file is created
-#     - can add automation to save files if we decide we need to merge more files
-
 # In[2]:
-
 
 DATA_DIR = '.\Data\intersected'  # data folder containing INTERSECTED shape files
 merge_folder = '.\Data\merged' # path to folder you want merged files to go to
@@ -27,7 +19,6 @@ print(files)
 
 # In[3]:
 
-
 intersected_shps = []
 
 for shp in files:
@@ -37,7 +28,6 @@ for shp in files:
 
 # In[4]:
 
-
 Deficient = intersected_shps[0]
 Existing = intersected_shps[1]
 Missing = intersected_shps[2]
@@ -45,8 +35,6 @@ Missing = intersected_shps[2]
 
 # In[5]:
 
-
 merge = pd.concat([Deficient, Missing])
 merge.to_file(f"{merge_folder}\Def_Mis_merged.shp")
 merge.plot()
-
