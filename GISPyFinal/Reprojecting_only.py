@@ -3,17 +3,11 @@
 
 # In[1]:
 
-
 import geopandas as gpd
 import glob
 
 
-# Notes:
-# - depending on mac or windows, make sure all of the slashes are facing the way you need them to.
-#     - if using backslashes, need double back slashes if the next word starts with an r, and need double back slashes in the "split" line of code
-
 # In[2]:
-
 
 DATA_DIR = '.\Data'  # data folder containing shape files
 rep_folder = '.\Data\\reprojected' # path to folder you want reprojected files to go to
@@ -26,7 +20,6 @@ print(files)
 
 # In[ ]:
 
-
 # for shp in files:
 #     print(shp)
 #     txt = shp.split("\\")
@@ -34,7 +27,6 @@ print(files)
 
 
 # In[3]:
-
 
 shp_files_proj = []  # empy list where reprojected shape files will be added (except boundary)
 
@@ -57,13 +49,10 @@ for shp in files:
 
 # In[4]:
 
-
 for shp in shp_files_proj:
     shp.plot()
 
 
 # In[5]:
 
-
 boundary.plot()
-
